@@ -30,7 +30,7 @@ client.on('message', async message => {
     /* COMMANDE ACCOUNT */
     if(command == 'account'){
         if(args[0] != null && args[1] != null){
-            getJSON('https://eu.api.blizzard.com/d3/profile/' + args[0] + '%23' + args[1] + '/?locale=fr_FR&access_token= ' + BATTLENET_TOKEN , function(error, response){
+            getJSON('https://eu.api.blizzard.com/d3/profile/' + args[0] + '%23' + args[1] + '/?locale=fr_FR&access_token=' + BATTLENET_TOKEN , function(error, response){
                 if(response != null){
 
                     /* Function for give the number of charaters on account */
