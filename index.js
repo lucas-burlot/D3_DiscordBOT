@@ -6,8 +6,8 @@ const getJSON = require('get-json');
 /* variables */
 const client = new DiscordInc.Client();
 const prefix = "+";
-const DISCORD_TOKEN = process.env.TOKEN;
-const BATTLENET_TOKEN = process.env.BATTLETOKEN;
+const DISCORD_TOKEN = 'YOUR DISCORD TOKEN';
+const BATTLENET_TOKEN = 'YOUR BATTLENET TOKEN;
 
 /* when the bot is ready */
 client.on('ready', () => {
