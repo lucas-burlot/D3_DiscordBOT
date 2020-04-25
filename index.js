@@ -88,7 +88,7 @@ client.on('message', async message => {
                         + '\n Character level : ' + response.heroes[i].level
                         + '\n Character paragon : ' + response.heroes[i].paragonLevel
                         + '\n Elites killed : ' + response.heroes[i].kills.elites
-                        + '\n Seasonal character ?  : ' + response.heroes[i].seasonal);
+                        + '\n Seasonal character ?  : ' + (response.heroes[i].seasonal ? 'Yes' : 'No'));
                         
                     }
                     message.channel.send(menuEmbed);
