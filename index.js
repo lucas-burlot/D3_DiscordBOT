@@ -105,7 +105,7 @@ client.on('message', async message => {
         }else{
             const syntaxErrorEmbed = new DiscordInc.MessageEmbed()
                     .setTitle('Syntax error')
-                    .setDescription('**Syntax** : +account __<name of account>__ __<battletag without #>__')
+                    .setDescription('**Syntax** : +character __<name of account>__ __<battletag without #>__')
                     .setColor('#ff0000');
                     message.channel.send(syntaxErrorEmbed);
         }
