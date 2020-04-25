@@ -14,5 +14,5 @@ Character command :
 ```
 Syntax : +profile <Battle Name> <BattleTag without #>
 ```
-![Character command](http://image.noelshack.com/fichiers/2020/17/6/1587811503-character-command.png)
+![Character command](http://image.noelshack.com/fichiers/2020/17/6/1587811901-character-command.png)
 
