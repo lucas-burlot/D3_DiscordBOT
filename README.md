@@ -21,3 +21,10 @@ Leader command :
 Syntax : +leader <Class name> <Start Number of TOP> <End Number of TOP>
 ```
 ![Leader command](http://image.noelshack.com/fichiers/2020/19/4/1588859816-leader.png)
+
+
+## Prerequisite
+- Discord.JS (https://discord.js.org/#/)
+- Get-JSON (https://www.npmjs.com/package/get-json)
+- Discord TOKEN (https://discord.com/developers/)
+- Battle.Net TOKEN (https://develop.battle.net/)
