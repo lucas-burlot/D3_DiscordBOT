@@ -7,9 +7,13 @@ const getJSON = require('get-json');
 const client = new DiscordInc.Client();
 const prefix = "+";
 const DISCORD_TOKEN = 'YOUR DISCORD TOKEN';
+<<<<<<< HEAD
 const BATTLENET_TOKEN = 'YOUR BATTLENET TOKEN';
 
 
+=======
+const BATTLENET_TOKEN = 'YOUR BATTLENET TOKEN;
+>>>>>>> e233a68f07d944faed3f1df7c182d650c00f50cc
 
 /* when the bot is ready */
 client.on('ready', () => {
