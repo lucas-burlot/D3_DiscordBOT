@@ -16,3 +16,8 @@ Syntax : +character <Battle Name> <BattleTag without #>
 ```
 ![Character command](http://image.noelshack.com/fichiers/2020/17/6/1587811901-character-command.png)
 
+Leader command : 
+```
+Syntax : +leader <Class name> <Start Number of TOP> <End Number of TOP>
+```
+![Leader command](http://image.noelshack.com/fichiers/2020/19/4/1588859816-leader.png)
