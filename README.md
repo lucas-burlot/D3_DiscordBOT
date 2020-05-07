@@ -24,6 +24,7 @@ Syntax : +leader <Class name> <Start Number of TOP> <End Number of TOP>
 
 
 ## Prerequisite
+- Node.JS (https://nodejs.org/en/)
 - Discord.JS (https://discord.js.org/#/)
 - Get-JSON (https://www.npmjs.com/package/get-json)
 - Discord TOKEN (https://discord.com/developers/)
