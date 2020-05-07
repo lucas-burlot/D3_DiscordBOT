@@ -6,8 +6,8 @@ const getJSON = require('get-json');
 /* variables */
 const client = new DiscordInc.Client();
 const prefix = "+";
-const DISCORD_TOKEN = 'YOUR DISCORD TOKEN';
-const BATTLENET_TOKEN = 'YOUR BATTLENET TOKEN';
+const DISCORD_TOKEN = 'NjkxNjU5ODAzNjUwNjg3MDI3.XqQRow.3eBE1W6I3abW_1e_VYPJWO7btlw';
+const BATTLENET_TOKEN = 'USSuxAbnty7lSAp1lXyiIFU3YuaGAYgU7b';
 
 
 
@@ -23,7 +23,7 @@ client.on('message', async message => {
     /* Functions */
     function errorEmbedMessage(){
         const errorAccountEmbed = new DiscordInc.MessageEmbed()
-        .setTitle('Account error')
+        .setTitle(':x: Account error :x:')
         .setDescription('The account does not exist, check the syntax')
         .setColor('#ff0000');
         message.channel.send(errorAccountEmbed);
@@ -73,7 +73,7 @@ client.on('message', async message => {
             });
         }else{
             const syntaxErrorEmbed = new DiscordInc.MessageEmbed()
-                    .setTitle('Syntax error')
+                    .setTitle(':x: Syntax error :x:')
                     .setDescription('**Syntax** : +account __<name of account>__ __<battletag without #>__')
                     .setColor('#ff0000');
                     message.channel.send(syntaxErrorEmbed);
@@ -114,7 +114,7 @@ client.on('message', async message => {
             });
         }else{
             const syntaxErrorEmbed = new DiscordInc.MessageEmbed()
-                    .setTitle('Syntax error')
+                    .setTitle(':x: Syntax error :x:')
                     .setDescription('**Syntax** : +character __<name of account>__ __<battletag without #>__')
                     .setColor('#ff0000');
                     message.channel.send(syntaxErrorEmbed);
@@ -130,11 +130,11 @@ client.on('message', async message => {
 
                     const menuEmbed = new DiscordInc.MessageEmbed()
                     .setColor('#EFFF00')
-                    .setAuthor("[SEASON "+ response.season + "] - " + response.title.en_US  + ' TOP ' + args[1] + ' to TOP '+ args[2])
+                    .setAuthor("🍃 [SEASON "+ response.season + "] - " + response.title.en_US  + ' TOP ' + args[1] + ' to TOP '+ args[2] + '🍃')
                     
                     for(var i = args[1]-1; i < args[2]; i++){
                         var timeNumberMinute = parseInt(response.row[i].data[2].timestamp*0.0000167);
-                        menuEmbed.addField('TOP '+ parseInt(i+1), 'BattleTAG : ' + response.row[i].player[0].data[0].string
+                        menuEmbed.addField('**:star: TOP '+ parseInt(i+1) + ' :star:** ', 'Profile : ' + response.row[i].player[0].data[0].string
                         + '\n Class : ' + response.row[i].player[0].data[2].string
                         + '\n Level : ' + response.row[i].player[0].data[4].number
                         + '\n Paragon Level : ' + response.row[i].player[0].data[5].number
@@ -149,9 +149,17 @@ client.on('message', async message => {
                 });
             }else{
                 const syntaxErrorEmbed = new DiscordInc.MessageEmbed()
-                        .setTitle('Syntax error')
+                        .setTitle(':x: Syntax error :x:')
                         .setDescription('**Syntax** : +leader __<class name>__ __<Start Number of TOP>__ __<End Number of TOP>__')
-                        .setColor('#ff0000');
+                        .setColor('#ff0000')
+                        .addField('**The different class names :**',
+                        "- Barbarian"
+                        + "\n - Crusader"
+                        + "\n - dh (for deamon hunter)"
+                        + "\n - Monk"
+                        + "\n - wd (for Witch doctor)"
+                        + "\n - Wizard");
+                        syntaxErrorEmbed.addField('**Number of top :**', 'Maximum of 25 in 25 (Like TOP1 to TOP25 or TOP5 to TOP30');
                         message.channel.send(syntaxErrorEmbed);
             }
         }
