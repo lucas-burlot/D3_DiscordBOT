@@ -165,7 +165,59 @@ client.on('message', async message => {
         }
 
 
+            /* COMMANDE profile */
+    if(command == 'heroitems'){
+        if(args[0] != null && args[1] != null){
+            getJSON('https://eu.api.blizzard.com/d3/profile/' + args[0] + '%23' + args[1] + '/hero/' + args[2] + '/items/?locale=en_US&access_token=' + BATTLENET_TOKEN, function(error, response){
+                if(response != null){
+                    const itemsEmbed = new DiscordInc.MessageEmbed()
+                    .setTitle('Account '+ args[0] + '#' + args[1])
+                    .setColor('#ff4500')
+                    // HEAD PART
+                    .addField('**:brain: Head Part**', 'Name : ' + response.head.name
+                    + '\n Armor : ' + response.head.armor
+                    + '\n Primary attributes : ' + response.head.attributes.primary
+                    + '\n Secondary attributes : ' + response.head.attributes.secondary
+                    + '\n Available gems : ' + response.head.gems[0].item.name + ' x'+ response.head.gems.length);
+
+                    // NECK PART
+                    itemsEmbed.addField('📿 **Neck Part**', 'Name : ' + response.neck.name
+                    + '\n Armor : ' + response.neck.armor
+                    + '\n Primary attributes : ' + response.neck.attributes.primary
+                    + '\n Secondary attributes : ' + response.neck.attributes.secondary
+                    + '\n Available gems : ' + response.neck.gems[0].item.name + ' x'+ response.neck.gems.length);
+
+                    // CHEST PART
+                    itemsEmbed.addField('📿 **Chest Part**', 'Name : ' + response.torso.name
+                    + '\n Armor : ' + response.torso.armor
+                    + '\n Primary attributes : ' + response.torso.attributes.primary
+                    + '\n Secondary attributes : ' + response.torso.attributes.secondary
+                    + '\n Available gems : ' + response.torso.gems[0].item.name + ' x'+ response.torso.gems.length);
+                    
+
+                    itemsEmbed.setURL('https://eu.diablo3.com/fr/profile/' + args[0] + '-' + args[1] + '/hero/' + args[2]);
+                    itemsEmbed.setFooter('https://eu.diablo3.com/fr/profile/' + args[0] + '-' + args[1] + '/hero/' + args[2]);
+                    
+                    message.channel.send(itemsEmbed);
+                }else{
+                    errorEmbedMessage();
+                }
+                
+            });
+        }else{
+            const syntaxErrorEmbed = new DiscordInc.MessageEmbed()
+                    .setTitle(':x: Syntax error :x:')
+                    .setDescription('**Syntax** : +heroitems __<name of account>__ __<battletag without #>__ __<bCharacter ID>__')
+                    .setColor('#ff0000');
+                    message.channel.send(syntaxErrorEmbed);
+        }
+    }
+
+
 });
+
+
+
 
 /* TOKENNNNNNNNNNNNN */
 client.login(DISCORD_TOKEN);
