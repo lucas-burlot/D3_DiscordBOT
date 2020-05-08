@@ -20,7 +20,7 @@ Leader command :
 ```
 Syntax : +leader <Class name> <Start Number of TOP> <End Number of TOP>
 ```
-![Leader command](http://image.noelshack.com/fichiers/2020/19/4/1588859816-leader.png)
+![Leader command](http://image.noelshack.com/fichiers/2020/19/5/1588935224-leader.png)
 
 
 ## Prerequisite
